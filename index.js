@@ -55,7 +55,16 @@ module.exports = function(oj, myPluginConfig) {
   });  
 
   /*
-   
+    If OJ is in server mode you can access the 
+    internal connect server instance:
   */
+
+  if(oj.server) {
+    /*
+      Example: Add a proxy middleware to the connect server
+      
+      oj.server.use('/api', proxy(url.parse('http://some.server.com/api')));
+    */
+  }
 
 };
