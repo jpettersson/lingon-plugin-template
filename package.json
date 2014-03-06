@@ -8,6 +8,7 @@
   },
   "description": "X plugin for Orangejuice",
   "version": "0.0.1",
+  "main": "index",
   "dependencies": {
     "orangejuice": "~0.2.0"
   },
