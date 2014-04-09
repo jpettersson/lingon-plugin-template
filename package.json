@@ -1,16 +1,15 @@
 {
-  "name": "orangejuice-your-project",
-  "private": "true",
+  "name": "lingon-your-project",
   "author": {
     "name": "Your Name",
     "email": "your@email.com",
     "url": "http://your.website.com"
   },
-  "description": "X plugin for Orangejuice",
+  "description": "My plugin for Lingon",
   "version": "0.0.1",
   "main": "index",
   "dependencies": {
-    "orangejuice": "~0.2.0"
+    "lingon": "~0.2.0"
   },
   "devDependencies": {}
 }

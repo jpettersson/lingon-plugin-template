@@ -1,4 +1,4 @@
-This is a reference for how to create an Orangejuice plugin.
+This is a reference for how to create an Lingon plugin.
 
 # My Plugin
 
@@ -6,15 +6,15 @@ A brief overview of the purpose of this plugin.
 
 ## Usage
 
-A detailed description of how to install and use this plugin. Include example code that shows how to use the plugin from the ojfile:
+A detailed description of how to install and use this plugin. Include example code that shows how to use the plugin from the lingon.js file:
 
 ```JavaScript
 #!/usr/bin/env node
 
-var oj = require('orangejuice'),
-    myPlugin = require('orangejuice-my-plugin');
+var lingon = require('lingon'),
+    myPlugin = require('lingon-my-plugin');
 
-myPlugin(oj);
+myPlugin(lingon);
 
 ...
 ```

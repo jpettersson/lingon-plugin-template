@@ -1,69 +1,69 @@
 /* 
-  An Orangejuice plugin is a function that decorates an 
-  Orangejuice instance with functionality.
+  An Lingon plugin is a function that decorates an 
+  Lingon instance with functionality.
    
   The typical use-case looks like:
 
-      var OJ = require('orangejuice');
-      var myPlugin = require('orangejuice-my-plugin');
+      var lingon = require('lingon');
+      var myPlugin = require('lingon-my-plugin');
   
-      myPlugin(OJ);
+      myPlugin(lingon);
     
   The following is a "kitchen sink" implementation of the 
-  Orangejuice API, to showcase the various ways a plugin 
-  can interact with Orangejuice.
+  Lingon API, to showcase the various ways a plugin 
+  can interact with Lingon.
 
   By convention the first argument to your plugin
-  function should be the Orangejuice instance.
+  function should be the Lingon instance.
    
   Feel free to add any number of additional arguments, 
   for instance to pass in a plugin-specific config object.
 */
 
-module.exports = function(oj, myPluginConfig) {
+module.exports = function(lingon, myPluginConfig) {
 
   /* 
-    ORANGEJUICE EVENTS
+    Lingon events
     ##################
 
-    Orangejuice allows you to register event listeners
+    Lingon allows you to register event listeners
     to get notified of the various stages of execution.
 
     The event API is: 
     
     Register an event listener:
-    oj.bind('eventName', callbackFunction);
+    lingon.bind('eventName', callbackFunction);
     
     Register an event listener that will be fired only once:
-    oj.one('eventName', callbackFunction);
+    lingon.one('eventName', callbackFunction);
     
     Remove an event listener:
-    oj.unbind('eventName', callbackFunction);
+    lingon.unbind('eventName', callbackFunction);
 
   */
 
-  oj.one('beforeBuild', function() {
+  lingon.one('beforeBuild', function() {
     console.log('Happens only once, before the first build');
   });
 
-  oj.bind('afterBuild', function() {
+  lingon.bind('afterBuild', function() {
     console.log('Happens after every build');
   });
 
-  oj.bind('beforeBuild', function() {
+  lingon.bind('beforeBuild', function() {
     console.log('Happens before every build');
   });  
 
   /*
-    If OJ is in server mode you can access the 
+    If Lingon is in server mode you can access the 
     internal connect server instance:
   */
 
-  if(oj.server) {
+  if(lingon.server) {
     /*
       Example: Add a proxy middleware to the connect server
       
-      oj.server.use('/api', proxy(url.parse('http://some.server.com/api')));
+      lingon.server.use('/api', proxy(url.parse('http://some.server.com/api')));
     */
   }
 
